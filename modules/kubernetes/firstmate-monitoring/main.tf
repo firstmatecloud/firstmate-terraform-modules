@@ -21,7 +21,7 @@ provider "helm" {
   }
 }
 
-resource "helm_release" "firstmate_monitoring" {
+resource "helm_release" "firstmate_monitoring_release" {
   name       = var.name
   namespace   = var.namespace
 
