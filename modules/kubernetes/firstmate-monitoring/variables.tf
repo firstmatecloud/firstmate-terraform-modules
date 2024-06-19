@@ -16,7 +16,7 @@ variable "name" {
 variable "namespace" {
   description = "Name of the helm release"
   type        = string
-  default     = "firstmate-monitoring"
+  default     = "firstmate"
 }
 variable "repository" {
   description = "Repository of the helm chart"
