@@ -32,7 +32,7 @@ variable "chart" {
 variable "chart_version" {
   description = "Version of the helm chart"
   type        = string
-  default     = "0.1.0"
+  default     = "0.1.1"
 }
 
 variable "cluster_name" {
