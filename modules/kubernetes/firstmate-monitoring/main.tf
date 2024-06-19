@@ -1,10 +1,10 @@
 terraform {
   required_providers {
-    helm       = {
+    helm = {
       source  = "hashicorp/helm"
       version = "=2.1.2"
     }
-    kubernetes =  {
+    kubernetes = {
       source  = "hashicorp/kubernetes"
       version = "=2.3.1"
     }
@@ -15,10 +15,9 @@ terraform {
 provider "helm" {
   kubernetes{
     host = var.kube_config.host
-
-    client_certificate     = file("~/.kube/client-cert.pem")
-    client_key             = file("~/.kube/client-key.pem")
-    cluster_ca_certificate = file("~/.kube/cluster-ca-cert.pem")
+    client_certificate     = var.kube_config.client_certificate
+    client_key             = var.kube_config.client_key
+    cluster_ca_certificate = var.kube_config.cluster_ca_certificate
   }
 }
 
