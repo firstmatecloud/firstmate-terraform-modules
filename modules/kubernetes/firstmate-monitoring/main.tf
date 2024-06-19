@@ -1,9 +1,18 @@
-provider "helm" {
-  kubernetes {
-    config_path    = "~/.kube/config"
-    config_context = "my-context"
-
+terraform {
+  required_providers {
+    helm       = {
+      source  = "hashicorp/helm"
+      version = "=2.1.2"
+    }
+    kubernetes =  {
+      source  = "hashicorp/kubernetes"
+      version = "=2.3.1"
+    }
   }
+}
+
+
+provider "helm" {
   kubernetes{
     host = var.kube_config.host
 
