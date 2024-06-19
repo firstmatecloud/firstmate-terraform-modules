@@ -29,6 +29,8 @@ resource "helm_release" "firstmate_monitoring_release" {
   chart      = var.chart
   version    = var.chart_version
 
+  create_namespace = true
+
   set {
     name  = "clusterName"
     value = var.cluster_name
