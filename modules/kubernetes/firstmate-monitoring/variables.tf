@@ -1,4 +1,4 @@
-variable "kubernetes" {
+variable "kube_config" {
   description = "Kubernetes config to connect to cluster."
   type = object({
     host = string
@@ -13,7 +13,7 @@ variable "name" {
   type        = string
   default     = "firstmate-monitoring"
 }
-variable "nameSpace" {
+variable "namespace" {
   description = "Name of the helm release"
   type        = string
   default     = "firstmate-monitoring"
@@ -29,17 +29,17 @@ variable "chart" {
   default     = "firstmate-client-monitoring-chart"
 }
 
-variable "chartVersion" {
+variable "chart_version" {
   description = "Version of the helm chart"
   type        = string
   default     = "0.0.2"
 }
 
-variable "clusterName" {
+variable "cluster_name" {
   description = "Name of the cluster"
   type        = string
 }
-variable "apiKey" {
+variable "api_key" {
   description = "Api key to connect to the FirstMate Api"
   type        = string
 }

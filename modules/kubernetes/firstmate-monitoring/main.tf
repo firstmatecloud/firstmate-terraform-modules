@@ -5,7 +5,7 @@ provider "helm" {
 
   }
   kubernetes{
-    host = var.kubernetes.host
+    host = var.kube_config.host
 
     client_certificate     = file("~/.kube/client-cert.pem")
     client_key             = file("~/.kube/client-key.pem")
@@ -15,19 +15,19 @@ provider "helm" {
 
 resource "helm_release" "firstmate_monitoring" {
   name       = var.name
-  namespace   = var.nameSpace
+  namespace   = var.namespace
 
   repository = var.repository
   chart      = var.chart
-  version    = var.chartVersion
+  version    = var.chart_version
 
   set {
     name  = "clusterName"
-    value = var.clusterName
+    value = var.cluster_name
   }
   set {
     name  = "apiKey"
-    value = var.apiKey
+    value = var.api_key
   }
   set {
     name  = "permissions.nodesMetrics"
