@@ -56,3 +56,16 @@ resource "helm_release" "firstmate_monitoring_release" {
     value = var.permissions.scalingMetrics
   }
 }
+
+module "sync" {
+  source  = "git::git@github.com:firstmatecloud/firstmate-terraform-modules.git//modules/firstmate/sync?ref=0.0.10"
+  depends_on = [helm_release.firstmate_monitoring_release]
+  api_key = var.api_key
+  body = jsonencode({
+    cluster = {
+      name     = var.cluster_name
+      version = var.kube_config.version
+    }
+  })
+  path = "kubernetes-monitoring"
+}

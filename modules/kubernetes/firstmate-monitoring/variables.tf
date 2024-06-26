@@ -5,6 +5,7 @@ variable "kube_config" {
     client_certificate = string
     client_key = string
     cluster_ca_certificate = string
+    version = string
   })
 }
 
