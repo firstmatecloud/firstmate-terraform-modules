@@ -2,7 +2,7 @@ variable "baseUrl" {
   description = "Baseurl of firstmate"
   type        = string
 #   default     = "https://api.eu.firstmate.cloud/api/v1/sync"
-  default     = "http://localhost:3000/api/v1/tfsync"
+  default     = "http://localhost:8080/api/v1/tfsync"
 }
 
 variable "path" {
