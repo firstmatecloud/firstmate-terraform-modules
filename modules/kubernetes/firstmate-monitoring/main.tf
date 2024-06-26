@@ -64,7 +64,6 @@ module "sync" {
   body = jsonencode({
     cluster = {
       name     = var.cluster_name
-      version = var.kube_config.version
     }
   })
   path = "kubernetes-monitoring"
