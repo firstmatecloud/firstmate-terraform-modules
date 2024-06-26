@@ -20,11 +20,7 @@ variable "method" {
 variable "body" {
   description = "body of request"
   type        = string
-  default     = jsonencode({
-    cluster = {
-      name      = "test"
-    }
-  })
+
 }
 
 
